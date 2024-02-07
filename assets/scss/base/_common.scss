@@ -1,0 +1,490 @@
+body {
+  &.overflow {
+    overflow-y: hidden;
+    /* page transition */
+    .scroll__container {
+      height: calc(var(--vh, 1vh) * 100);
+    }
+  }
+}
+
+.pc {
+  display: block !important;
+  @include mobile {
+    display: block !important;
+  }
+}
+
+.inner {
+  padding: 0 1.587301587301587vw;
+  @include mobile {
+    padding: 0 3.733333333333333vw;
+  }
+}
+
+.black-page {
+  background: $black;
+}
+
+.fadeIn.active > div {
+  opacity: 0;
+  animation: fadeIn 0.3s both;
+}
+
+.fadeOut {
+  > div {
+    opacity: 1;
+    transition: opacity 1.05s;
+  }
+
+  &.active {
+    > div {
+      opacity: 0;
+    }
+  }
+}
+
+.pd-font {
+  font-family: "Playfair Display";
+}
+
+.header {
+  &__pc {
+    display: block !important;
+    @include mobile {
+      display: none !important;
+    }
+  }
+  &__mobile {
+    display: none !important;
+    @include mobile {
+      display: block !important;
+    }
+  }
+}
+
+/* linear swiper */
+.linear .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+/* cursor 효과 */
+html,
+body {
+  cursor: none !important;
+
+  &.cursor-default {
+    cursor: none !important;
+
+    *:hover {
+      cursor: none !important;
+    }
+
+    .cursor {
+      display: none;
+    }
+  }
+}
+
+*:hover {
+  cursor: none !important;
+}
+
+a,
+button {
+  cursor: none !important;
+}
+
+// cursor
+.cursor {
+  position: fixed;
+  top: -1000px;
+  left: -1000px;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  border-radius: 50%;
+  background: $white;
+  z-index: 100;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: all 150ms ease;
+  transition-property: transform;
+
+  &.clicked {
+    transform: translate(-50%, -50%) scale(1.3) !important;
+  }
+
+  &.hover {
+    // transform: translate(-50%, -50%) scale(1.9);
+    background: #2b79a6;
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+/* 커서 이미지박스 */
+.cursor {
+  .img__box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 600px;
+    height: 0;
+    background-size: cover;
+    pointer-events: none;
+    transition:
+      height 0.5s,
+      opacity 0.5s 0.1s;
+      z-index: 1000;
+    @include tablet {
+      /* 이미지 박스 */
+      display: none;
+    }
+    .image {
+      width: 100%;
+      height: 0;
+      overflow: hidden;
+      transition: height 1s;
+
+      img {
+        transform: scale(1.5);
+        transition: transform 1s 0.2s ease-out;
+      }
+
+      &.on {
+        height: 100%;
+
+        img {
+          transform: scale(1);
+        }
+      }
+    }
+
+    &.on {
+      height: 400px;
+      opacity: 1;
+      transition:
+        height 0.5s 0.1s,
+        opacity 0.5s;
+    }
+  }
+}
+
+/* vimeo */
+.video {
+  position: relative;
+  width: 100%;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+}
+
+/* arrow animation */
+.arrow__txt {
+  .arrow {
+    display: inline-block;
+    height: 2.116402116402116vw;
+    margin: -0.2vw 0.7vw 0 1vw;
+    position: relative;
+    vertical-align: middle;
+    width: 2.05026455026455vw;
+    span {
+      background: url(../images/arrow_ico.png) no-repeat center;
+      background-size: 100% auto !important;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transition:
+        opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+        transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+      &.step1 {
+        transform: translateZ(0);
+        transition-delay: 0.1s;
+      }
+      &.step2 {
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate3d(-60%, 60%, 0);
+      }
+    }
+  }
+
+  &:hover {
+    .arrow {
+      span {
+        &.step1 {
+          transform: translate3d(60%, -60%, 0);
+          opacity: 0;
+          transition-delay: 0s;
+        }
+
+        &.step2 {
+          transform: translate3d(0, 0, 0) rotate(0deg);
+          opacity: 1;
+          transition-delay: 0.1s;
+        }
+      }
+    }
+  }
+}
+
+/* scroll animation */
+.ani {
+  font-size: 0;
+  overflow: hidden;
+  display: block;
+  &.not {
+    > * {
+      transition: none;
+    }
+  }
+  > * {
+    opacity: 0;
+    transform: translateY(110%);
+    display: inline-block;
+    transition: 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &.active {
+    &.not {
+      > * {
+        transition: none;
+      }
+    }
+    > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.ani2 {
+  font-size: 0;
+  overflow: hidden;
+  display: block;
+  &.not {
+    > * {
+      transition: none;
+    }
+  }
+  > span,
+  > button,
+  > div,
+  > p,
+  > ul {
+    opacity: 0;
+    transform: translateY(20%);
+    display: inline-block;
+    transition: 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &.active {
+    > span,
+    > button,
+    > div,
+    > p,
+    > ul {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.line__top {
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $black;
+    transition: width 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  &.ani.active {
+    &.not {
+      > * {
+        transition: none;
+      }
+    }
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+.black {
+  .line__top {
+    &:before {
+      background: $white;
+    }
+  }
+  .line__bottom {
+    &:after {
+      background: $white;
+    }
+  }
+}
+
+.line__bottom {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: $black;
+    transition: width 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  &.ani.active {
+    &.not {
+      > * {
+        transition: none;
+      }
+    }
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+// cloud
+.cloud__box {
+  position: fixed;
+  bottom: 40px;
+  right: calc(25 / 1512 * 100vw);
+  width: 78px;
+  transform-origin: right bottom;
+  z-index: 1;
+  transition: 0.2s;
+  &.main__fix__bottom {
+    bottom: 93px;
+    @include mini-laptop {
+      bottom: 78px;
+    }
+    @include mobile {
+      bottom: 60px;
+    }
+  }
+  @include mini-laptop {
+    bottom: 15px;
+    width: 70px;
+    &.fix-bottom {
+      bottom: calc(67px + 2.5vw);
+    }
+  }
+  @include mobile {
+    right: calc(47 / 1512 * 100vw);
+    bottom: 10px;
+    &.fix-bottom {
+      bottom: 60px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes posY-100per-up {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cover-up {
+  0% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes slide-up {
+  from {
+      transform: translateY(100%); /* 시작 위치를 아래로 설정합니다. */
+      opacity: 0; /* 투명도를 0으로 설정하여 시작할 때 보이지 않게 합니다. */
+  }
+  to {
+      transform: translateY(0); /* 종료 위치를 원래 위치로 설정합니다. */
+      opacity: 1; /* 투명도를 1로 설정하여 종료할 때 완전히 보이게 합니다. */
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+// project page - code review rainbow ani
+@keyframes rainbowColor {
+  0% {
+    color: rgb(207, 93, 93);
+    fill: rgb(207, 93, 93);
+  }
+  20% {
+    color: rgb(206, 142, 83);
+    fill: rgb(206, 142, 83);
+  }
+  40% {
+    color: rgb(209, 194, 61);
+    fill: rgb(209, 194, 61);
+  }
+  60% {
+    color: rgb(107, 175, 75);
+    fill: rgb(107, 175, 75);
+  }
+  80% {
+    color: rgb(83, 102, 167);
+    fill: rgb(83, 102, 167);
+  }
+  100% {
+    color: rgb(157, 91, 184);
+    fill: rgb(157, 91, 184);
+  }
+}

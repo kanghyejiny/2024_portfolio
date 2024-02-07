@@ -1,0 +1,559 @@
+.work__h2 {
+  position: relative;
+  .work__title {
+    padding: 1.32vw 1.6vw 1.38vw;
+    transition: all 0.2s;
+  }
+}
+
+.project {
+  /* animation */
+  .sec1 {
+    width: 100%;
+    height: 100vh;
+    padding: 5.35vw 0 9vw;
+    margin-bottom: 2vh;
+    @include mobile {
+      padding: 16.2vw 0 27.9vw;
+    }
+    .inner {
+      @include tablet {
+        padding-top: 10vh;
+      }
+    }
+    h1 {
+      &.step2.ani.active {
+        span {
+          transition-delay: 0.1s;
+        }
+      }
+      span {
+        font-size: 9.920634920634921vw;
+        line-height: 0.975;
+        color: $black;
+        @include tablet {
+          font-size: 11vw;
+        }
+        @include mobile {
+          font-size: 10.6666666667vw;
+          line-height: 0.92;
+          letter-spacing: -0.3vw;
+        }
+      }
+      &.step1 {
+        span {
+          animation: slide-up 1s ease-in-out;
+          letter-spacing: -0.3vw;
+        }
+        @include mobile {
+          letter-spacing: -0.3vw;
+        }
+      }
+      &.step2 {
+        span {
+          animation: slide-up 1s ease-in-out;
+          animation-delay: 0.3s;
+          font-family: "Playfair Display";
+          font-style: italic;
+          font-weight: 500;
+        }
+      }
+      @include mobile {
+        font-size: 10.66666666666667vw;
+        line-height: 0.92;
+      }
+    }
+    .p__box {
+      margin: 3.8vw 0 0 16.4vw;
+      @include tablet {
+        margin: 7vw 0 0 16vw;
+      }
+      @include mobile {
+        width: 78%;
+        margin: 10vw 0 0 16vw;
+      }
+      p {
+        font-size: 0;
+        overflow: hidden;
+        display: block;
+        animation: slide-up 1s ease-in-out;
+        animation-delay: 0.4s;
+        span {
+          opacity: 0;
+          display: inline-block;
+          transform: translateY(110%);
+          transition: 1.05s cubic-bezier(0.19, 1, 0.22, 1);
+          font-family: "Pretendard";
+          font-size: 1.322751322751323vw;
+          font-weight: 600;
+          line-height: 1.6;
+          color: $black;
+          @include tablet {
+            font-size: 2.2vw;
+            br {
+              display: none;
+            }
+          }
+          @include mobile {
+            font-size: 3.466666666666667vw;
+            line-height: 1.678;
+          }
+          i {
+            font-family: "Figtree";
+            font-style: normal;
+            color: $black;
+          }
+        }
+      }
+      &.ani.not {
+        p {
+          span {
+            transition: none;
+          }
+        }
+      }
+      &.ani.active {
+        p {
+          span {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          &:nth-child(1) span {
+            transition-delay: 0.2s;
+          }
+          &:nth-child(2) span {
+            transition-delay: 0.35s;
+          }
+          &:nth-child(3) span {
+            transition-delay: 0.4s;
+          }
+          &:nth-child(4) span {
+            transition-delay: 0.5s;
+          }
+          &:nth-child(5) span {
+            transition-delay: 0.6s;
+          }
+        }
+      }
+    }
+    .img1 {
+      margin: 0 -0.2vw -3rem 0.2vw;
+      width: 10.64021164021164vw;
+      @include mobile {
+        margin: 0 1.3vw -0.3vw 2vw;
+        width: 9.066667vw;
+      }
+    }
+    .img2 {
+      margin: 2vw 0 -1vw 0;
+      width: 8.928571428571429vw;
+      @include mobile {
+        margin: 1.7vw 0.4vw 0 1vw;
+        width: 9.6vw;
+      }
+    }
+    .video1 {
+      display: inline-block;
+      margin: 0 0 0 -1vw;
+      width: 14.87301587301587vw;
+      @include mobile {
+        margin: 1.9vw 0 0 1.4vw;
+        width: 17.45333333333333vw;
+      }
+    }
+  }
+  .sec2__work {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    .work__div {
+      position: relative;
+      .arrow__txt {
+        display: none;
+      }
+      .work__title__wrap {
+        width: 100%;
+        transition: none;
+        margin: 0 auto;
+        > span,
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        line-height: 1;
+        padding: 1.32vw 1.6vw 1.38vw;
+        transition: all 0.2s;
+        @include mobile {
+          padding: 3.32vw 2.8vw 3.38vw 3.6vw;
+        }
+        h2 {
+          position: relative;
+          width: 100%;
+          letter-spacing: -0.1vw;
+          @include mobile {
+            width: 82.8%;
+          }
+          .txt {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            font-size: 6.62962962962963vw;
+            line-height: 1.1;
+            color: $white;
+            z-index: 1;
+            @include tablet {
+              font-size: 9vw;
+            }
+            @include mobile {
+              font-size: 8vw;
+            }
+            &::after,
+            &::before {
+              content: "";
+              width: 4.647486772486772vw;
+              height: 4.647486772486772vw;
+              position: absolute;
+              right: 1.3%;
+              top: 50%;
+              transform: translateY(-50%);
+              transition: 0.4s;
+              @include tablet {
+                width: 6vw;
+                height: 6vw;
+              }
+              @include mobile {
+                display: none;
+              }
+            }
+            &::before {
+              background: url(../images/ico_scroll_down_w.png) 50% no-repeat;
+              background-size: 100% auto;
+              @include mobile {
+                display: none;
+              }
+            }
+            i {
+              font-family: "Playfair Display";
+              color: $white;
+            }
+          }
+        }
+        &:hover {
+          background: $white;
+          h2 {
+            .txt {
+              color: $black;
+              i {
+                color: $black;
+              }
+              &::before {
+                opacity: 0;
+              }
+              &::after {
+                opacity: 1;
+                background: url(../images/ico_scroll_down.png) 50% no-repeat;
+                background-size: 100% auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sec3 {
+    margin-bottom: 50vh;
+    .project__list {
+      width: 90%;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      counter-reset: number;
+    }
+    .project__list__item {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      @include tablet {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      @include mobile {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      /* 사이트 링크 */
+      a {
+        @include tablet {
+          width: 100%;
+        }
+        &:first-child {
+          flex: 1;
+          display: block;
+          position: relative;
+          padding: 8.6rem 3rem 10rem 20rem;
+          transition: padding 0.8s ease-out;
+          @include laptop {
+            padding: 6.6rem 1rem 8rem 14rem;
+          }
+          @include tablet {
+            padding: 3rem 2rem;
+          }
+          @include mobile {
+            padding: 2rem 0.5rem 0;
+          }
+          &::before {
+            position: relative;
+            top: 25px;
+            left: -50px;
+            font-size: 1.4rem;
+            content: "(0" counter(number) ")";
+            counter-increment: number;
+            color: $white;
+            @include laptop {
+              top: 20px;
+              left: -40px;
+            }
+            @include tablet {
+              display: none;
+            }
+          }
+          &:hover {
+            padding: 10.6rem 4rem 12rem 8rem;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 80%, transparent 100%);
+            @include laptop {
+              padding: 8.6rem 3rem 10rem 7rem;
+            }
+            @include tablet {
+              padding: 3rem 2rem;
+              background: none;
+            }
+            @include mobile {
+              padding: 2rem .5rem 0;
+            }
+          }
+        }
+      }
+      .img__box {
+        @include tablet {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        @include mobile {
+          width: 90%;
+        }
+      }
+      .text__box {
+        @include tablet {
+          padding: 0 2rem 0 5rem;
+          color: $white;
+        }
+        @include mobile {
+          padding: 0 1rem;
+        }
+      }
+      .title {
+        @include tablet {
+          display: block;
+          position: relative;
+          margin-top: 2rem;
+        }
+        &::before {
+          @include tablet {
+            position: absolute;
+            top: 2.7vw;
+            left: -40px;
+            content: "(0" counter(number) ")";
+            counter-increment: number;
+            font-size: 1.4rem;
+          }
+          @include mobile {
+            top: 0;
+            left: 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    .img__box {
+      display: none;
+    }
+    .title {
+      font-size: 7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $white;
+      @include laptop {
+        font-size: 7vw;
+      }
+      @include mobile {
+        font-size: 3rem;
+        padding-top: 1.5rem;
+      }
+      span {
+        font-size: 3.6rem;
+        color: $white;
+        @include laptop {
+          font-size: 3rem;
+        }
+        @include mobile {
+          font-size: 1.4rem;
+        }
+      }
+      
+    }
+    .desc {
+      margin-top: 5rem;
+      font-family: "Pretendard";
+      line-height: 2.4rem;
+      color: $white;
+      font-size: 1.8rem;
+      @include laptop {
+        width: 45rem;
+        font-size: 1.4rem;
+        word-break: keep-all;
+      }
+      @include tablet {
+        margin-top: 2rem;
+        width: 100%;
+        font-size: 1.8vw;
+      }
+      @include mobile {
+        margin-top: 1.2rem;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+      br {
+        @include laptop {
+          display: none;
+        }
+      }
+    }
+    .hash {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+      letter-spacing: normal;
+      @include laptop {
+        font-size: 1.5vw;
+      }
+      @include mobile {
+        font-size: 1.2rem;
+        margin-top: 0.8rem;
+        line-height: 1.6rem;
+      }
+      span {
+        margin: 0 0.3rem;
+        font-family: "Pretendard";
+        color: rgba(255, 255, 255, 0.6);
+        @include mobile {
+          white-space: nowrap;
+        }
+      }
+    }
+    /* code review link */
+    .link__review {
+      width: 40.2rem;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10rem;
+      font-size: 2.4rem;
+      fill: #aaa;
+      color: #aaa;
+      transition:
+        color 0.3s,
+        padding 0.5s ease-out;
+      @include laptop {
+        width: 25rem;
+        padding: 0 4rem;
+        font-size: 1.8rem;
+      }
+      @include tablet {
+        justify-content: end;
+        padding: 3rem 0;
+        font-size: 2vw;
+      }
+      @include mobile {
+        font-size: 1.3rem;
+        justify-content: end;
+        padding: 3rem 0;
+      }
+      i {
+        color: #aaa;
+        font-family: "Playfair Display";
+      }
+      &:hover {
+        padding-right: 4rem;
+        animation: rainbowColor 1s infinite alternate;
+        @include laptop {
+          padding-right: 0;
+        }
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 35rem;
+          height: 100%;
+          background: linear-gradient(270deg, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+          pointer-events: none;
+          @include tablet {
+            background: none;
+          }
+        }
+        i {
+          animation: rainbowColor 1s infinite alternate;
+        }
+      }
+      &::after {
+        content: "";
+        width: 5rem;
+        height: 5rem;
+        margin: 0.4rem 0 0 0.5rem;
+        background: url(../images/ico_move.png) no-repeat center / 100% auto;
+        @include tablet {
+          margin: 0;
+        }
+        @include mobile {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+  .sec4 {
+    margin: 0;
+    padding: 0 1.5873015873vw;
+    font-size: 0;
+    overflow: hidden;
+    @include mobile {
+      padding: 0;
+    }
+    &__video {
+      width: 100%;
+      height: 45vh;
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.menu__btn {
+  display: none;
+  position: relative;
+  width: 21px;
+  height: 21px;
+  font-size: 0;
+  line-height: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include mobile {
+    display: flex;
+    width: 40px;
+    height: 44px;
+    span {
+      display: inline-block;
+      margin-bottom: 2px;
+      width: 5px;
+      height: 5px;
+      border-radius: 100%;
+      background: $white;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

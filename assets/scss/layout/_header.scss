@@ -1,0 +1,133 @@
+header {
+  position: relative;
+  overflow: hidden;
+}
+
+header {
+  .header__wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 24px 25px 0;
+    mix-blend-mode: difference;
+    z-index: 5;
+    @include mobile {
+      padding: 0 0 0 14px;
+    }
+  }
+  .logo {
+    position: relative
+    ;
+    width: 155px;
+    line-height: 0;
+    a {
+      width: 100%;
+    }
+    &__black {
+      display: none;
+    }
+    img {
+      transition: opacity .3s;
+    }
+    @include mobile {
+      width: 104px;
+    }
+  }
+  &.logo__white {
+    .logo__black {
+      opacity: 0;
+    }
+    .logo__white {
+      opacity: 1;
+    }
+  }
+  nav {
+    ul li {
+      padding: 0 8.4px;
+      display: inline-block;
+      &:last-child {
+        padding-right: 0;
+      }
+      a {
+        position: relative;
+        padding: 2px 7px 1px;
+        font-size: 2.3rem;
+        line-height: 17px;
+        border-radius: 9.5px;
+        color: $white;
+        overflow: hidden;
+        &:hover {
+          background: $white;
+          color: $black;
+        }
+        &.active {
+          background: $white;
+          color: $black;
+        }
+      }
+      @include mobile {
+        padding: 0;
+        width: 100%;
+        border-bottom: 1px solid $black;
+        a {
+          display: block;
+          padding: 7.34vw 14px 7.44vw;
+          font-size: 6.666666666666667vw;
+          border-radius: 0;
+          &.active {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+    @include mobile {
+      opacity: 0;
+      position: fixed;
+      top: 44px;
+      left: 0;
+      width: 100%;
+      border-top: 1px solid $black;
+      background: $white;
+      transition: opacity .3s;
+      z-index: -1;
+    }
+  }
+  &.active {
+    @include mobile {
+      .header__wrap {
+        mix-blend-mode: unset;
+        background: $white;
+        transition: background-color .3s;
+        .logo__white {
+          display: none;
+        }
+        .logo__black {
+          display: block;
+        }
+      }
+      nav {
+        opacity: 1;
+        z-index: 2;
+        ul li a {
+          color: $black;
+        }
+      }
+      .menu__btn {
+        span {
+          display: none;
+          margin-bottom: 0;
+          background: $black;
+          &:nth-child(2) {
+            display: block;
+            width: 11px;
+            height: 11px;
+          }
+        }
+      }
+    }
+  }
+}
