@@ -345,7 +345,7 @@
             font-size: 10vw;
           }
           @include mobile {
-            font-size: 9rem;
+            font-size: 18vw;
           }
         }
         .s-italic {
@@ -539,7 +539,6 @@
           height: 12rem;
         }
       }
-      
     }
     .marquee {
       display: flex;
@@ -557,7 +556,7 @@
         font-family: "Pretendard";
         font-weight: 100;
         &.deco {
-          padding: .4rem 5rem;
+          padding: 0.4rem 5rem;
           border-radius: 48%;
           border: 2px solid $white;
         }
@@ -706,10 +705,6 @@
             }
             li {
               margin: 0 -1.1vw;
-              display: inline-block;
-              @include mobile {
-                margin: -8.7vw 0;
-              }
               &:nth-child(1) .text-wrap {
                 background: url(../images/about_sec5_circle_bg1.png) no-repeat center / 100% auto;
               }
@@ -764,7 +759,7 @@
                   }
                   @include mobile {
                     font-size: 2.5vw;
-                    letter-spacing: -.16vw;
+                    letter-spacing: -0.16vw;
                     line-height: 1.22;
                     margin-top: 3.4vw;
                   }
@@ -810,6 +805,7 @@
     margin-right: 10rem;
     padding-top: 50vh;
     @include mobile {
+      padding-top: 70vh;
       margin-right: 2rem;
     }
   }
